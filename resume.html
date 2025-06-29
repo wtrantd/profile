@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tran Thanh Dung (William) - DevOps Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Visualization & Content Choices: 
+        - Overview: Text block for professional summary. Goal: Inform. Method: HTML. Justification: Direct and clear.
+        - Experience: Structured cards for each role. Goal: Detail. Method: HTML/Tailwind. Justification: Chronological and readable.
+        - Skills: Horizontal Bar Chart (Chart.js) for key skill category counts and detailed lists. Goal: Summarize & Detail. Method: Chart.js/HTML. Justification: Visual overview plus comprehensive listing.
+        - Education: Structured list. Goal: Inform. Method: HTML. Justification: Clear academic history.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif; /* Tailwind's default sans-serif is a good choice */
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px; /* max-w-2xl roughly */
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px; /* h-80 */
+            max-height: 400px;
+        }
+        @media (min-width: 640px) { /* sm breakpoint */
+            .chart-container {
+                height: 384px; /* h-96 */
+            }
+        }
+        .word-break-item {
+             word-break: break-word;
+        }
+    </style>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+</head>
+<body class="bg-slate-50 text-slate-700 antialiased">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-5xl">
+
+        <header class="text-center mb-8 py-6 bg-white shadow-md rounded-lg">
+            <h1 class="text-4xl font-bold text-sky-700">TRAN THANH DUNG (William)</h1>
+            <p class="text-xl text-slate-600 mt-1">DevOps Engineer | Python & Kubernetes Specialist</p>
+            <div class="mt-3 text-sm text-slate-500">
+                <span>william@trantd.net</span> | <span>(+84) 354 627 927</span> | 
+                <a href="https://linkedin.com/in/wtrantd" target="_blank" rel="noopener noreferrer" class="text-sky-600 hover:text-sky-700 hover:underline">linkedin.com/in/wtrantd</a>
+            </div>
+        </header>
+
+        <nav class="flex justify-center space-x-2 sm:space-x-4 mb-8 pb-2 border-b border-slate-300">
+            <button data-tab="overview" class="tab-button active-tab bg-sky-600 text-white py-2 px-4 rounded-md hover:bg-sky-700 transition-colors">Overview</button>
+            <button data-tab="experience" class="tab-button inactive-tab bg-slate-200 text-sky-700 py-2 px-4 rounded-md hover:bg-slate-300 transition-colors">Experience</button>
+            <button data-tab="skills" class="tab-button inactive-tab bg-slate-200 text-sky-700 py-2 px-4 rounded-md hover:bg-slate-300 transition-colors">Skills</button>
+            <button data-tab="education" class="tab-button inactive-tab bg-slate-200 text-sky-700 py-2 px-4 rounded-md hover:bg-slate-300 transition-colors">Education</button>
+        </nav>
+
+        <main>
+            <section id="overview" class="tab-content active p-6 bg-white shadow-md rounded-lg">
+                <h2 class="text-2xl font-semibold text-sky-700 mb-4 border-b-2 border-sky-200 pb-2">Professional Overview</h2>
+                <p class="mb-4 text-slate-600 leading-relaxed">
+                    This section provides a brief introduction to my professional background and key strengths. As a highly accomplished and results-driven DevOps Engineer with <span class="font-semibold text-sky-600">5 years</span> of progressive experience, I specialize in designing, implementing, and optimizing robust software delivery pipelines and infrastructure. My expertise spans Python scripting, Kubernetes orchestration, CI/CD automation, and various cloud platforms.
+                </p>
+                <p class="text-slate-600 leading-relaxed">
+                    I am adept at enhancing system reliability, security, and cost-efficiency through automation and adherence to best practices. A strong collaborator with an agile mindset, I am keen to contribute to Swisscom's critical services within a dynamic, cross-functional team. This interactive resume allows you to explore my qualifications in detail.
+                </p>
+            </section>
+
+            <section id="experience" class="tab-content p-6 bg-white shadow-md rounded-lg">
+                <h2 class="text-2xl font-semibold text-sky-700 mb-6 border-b-2 border-sky-200 pb-2">Work Experience</h2>
+                <p class="mb-6 text-slate-600 leading-relaxed">
+                    Explore my career journey below. This section details my roles, responsibilities, and significant achievements in leveraging technology to drive efficiency, security, and innovation in complex IT environments. Each position has provided valuable experience in different facets of DevOps and System Administration.
+                </p>
+
+                <div class="space-y-8">
+                    <div class="p-6 border border-slate-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                        <h3 class="text-xl font-semibold text-sky-600">DevOps Engineer</h3>
+                        <p class="text-md text-slate-500">Hansen Technologies Vietnam, Ho Chi Minh City</p>
+                        <p class="text-sm text-slate-400 mb-3">Aug 2022 – Present</p>
+                        <ul class="list-disc list-outside ml-5 space-y-2 text-slate-600 text-sm leading-relaxed">
+                            <li>Administered and maintained production Kubernetes clusters and critical infrastructure services (KeyCloak, HA Proxy, SonarQube, Jenkins), leveraging Podman.</li>
+                            <li>Engineered and maintained Jenkins CI/CD pipelines for 8+ critical applications, significantly accelerating continuous integration and delivery.</li>
+                            <li>Automated release management by integrating Git services (Bitbucket, GitHub), JIRA, Jenkins, and internal Java web services via REST APIs.</li>
+                            <li>Developed and maintained Puppet roles and modules to manage and configure over 150 on-premises and cloud-hosted PaaS/SaaS servers.</li>
+                            <li>Authored extensive Python, Perl, and Bash scripts to automate complex development, testing, and deployment processes.</li>
+                            <li>Enhanced infrastructure security (HTTPS, iptables, MFA, sudo configurations) and led quarterly security patching initiatives.</li>
+                            <li>Managed environment secrets, randomized passwords, rotated credentials, and automated PKI X.509 certificate management.</li>
+                            <li>Led source code migrations (Bitbucket, GitHub) and reduced Git repository size by 50% by removing large files and credentials.</li>
+                            <li>Integrated Azure enterprise applications to enable SAML Single Sign-On (SSO).</li>
+                            <li>Reduced Oracle database licensing costs by 80% by centralizing testing database hosts in Jenkins CI auto-testing environments.</li>
+                            <li>Utilized Dynatrace for log data collection, analysis, troubleshooting, and proactive system performance monitoring.</li>
+                        </ul>
+                    </div>
+
+                    <div class="p-6 border border-slate-200 rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                        <h3 class="text-xl font-semibold text-sky-600">Unix System Administrator</h3>
+                        <p class="text-md text-slate-500">CODIX Vietnam, Ho Chi Minh City</p>
+                        <p class="text-sm text-slate-400 mb-3">Aug 2020 – Aug 2022</p>
+                        <ul class="list-disc list-outside ml-5 space-y-2 text-slate-600 text-sm leading-relaxed">
+                            <li>Provisioned and built development, testing, and production Unix servers using VMware, IBM virtualization, IBM SAN storage, and Oracle Public Cloud (SaaS model).</li>
+                            <li>Maintained comprehensive application backup and disaster recovery solutions, including daily ETL, RMAN backups, and Oracle Data Guard.</li>
+                            <li>Implemented high availability for critical extranet instances.</li>
+                            <li>Delivered infrastructure security patches and optimized configurations, integrating updates into a CI/CD pipeline connected to CVS.</li>
+                            <li>Provided continuous 24/7 technical support for 5+ customers, utilizing proactive monitoring systems.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="tab-content p-6 bg-white shadow-md rounded-lg">
+                <h2 class="text-2xl font-semibold text-sky-700 mb-4 border-b-2 border-sky-200 pb-2">Technical Skills</h2>
+                 <p class="mb-6 text-slate-600 leading-relaxed">
+                    This section offers a comprehensive overview of my technical capabilities, showcasing expertise across various domains crucial for modern DevOps practices. The chart below visualizes the breadth of key skill areas, providing a quick summary. This is followed by a detailed list for a more granular understanding of my technical toolkit.
+                </p>
+                <div class="mb-8 chart-container">
+                    <canvas id="skillsChart"></canvas>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-sm">
+                    <div>
+                        <h4 class="font-semibold text-sky-600 mb-2">Programming & Scripting</h4>
+                        <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600">
+                            <li>Python</li><li>Bash/Korn Shell</li><li>Perl</li><li>Java</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sky-600 mb-2">Containerization & Orchestration</h4>
+                        <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600">
+                            <li>Kubernetes</li><li>Podman</li><li>Docker</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sky-600 mb-2">CI/CD Tools</h4>
+                        <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600">
+                            <li>Jenkins</li><li>GitLab CI</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sky-600 mb-2">Configuration Management</h4>
+                        <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600">
+                            <li>Puppet</li><li>RedHat Satellite</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sky-600 mb-2">Cloud Platforms</h4>
+                        <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600">
+                            <li>Oracle Cloud</li><li>AWS</li><li>Azure</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sky-600 mb-2">Operating Systems</h4>
+                        <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600">
+                            <li>RedHat Enterprise Linux</li><li>AIX</li><li>Debian-based Linux</li><li>Windows Subsystem</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sky-600 mb-2">Databases</h4>
+                        <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600">
+                            <li>Oracle Database</li><li>Postgres Database</li><li>MariaDB</li>
+                        </ul>
+                    </div>
+                     <div>
+                        <h4 class="font-semibold text-sky-600 mb-2">Version Control</h4>
+                        <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600">
+                            <li>Git</li><li>Bitbucket</li><li>GitHub</li><li>GitLab</li><li>CVS</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sky-600 mb-2">Monitoring & Logging</h4>
+                        <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600">
+                            <li>Dynatrace</li><li class="word-break-item">Prometheus, Grafana, ELK Stack (Familiar with concepts)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sky-600 mb-2">Artifact Management</h4>
+                        <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600">
+                            <li>JFrog Artifactory</li>
+                        </ul>
+                    </div>
+                     <div>
+                        <h4 class="font-semibold text-sky-600 mb-2">Build Tools</h4>
+                        <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600">
+                           <li>Ant</li><li>Maven</li><li>Gradle</li>
+                        </ul>
+                    </div>
+                     <div>
+                        <h4 class="font-semibold text-sky-600 mb-2">Networking & Security</h4>
+                        <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600">
+                           <li class="word-break-item">Cloud-managed firewall rules</li><li class="word-break-item">OS-level iptables</li><li>TCP/UDP</li><li>SSH</li><li>HTTPS</li><li>MFA</li><li>PKI X.509</li><li>SAML SSO</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-sky-600 mb-2">Methodologies</h4>
+                        <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600">
+                           <li>Agile</li><li>DevOps</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <h4 class="text-lg font-semibold text-sky-700 mb-3">Other Skills</h4>
+                    <ul class="list-disc list-outside ml-5 space-y-1 text-slate-600 text-sm">
+                        <li>Proficient in English (Verbal & Written Communication)</li>
+                        <li>Strong Analytical and Problem-Solving Abilities</li>
+                        <li>Effective Task Management and Incident Resolution</li>
+                        <li>Collaborative Team Player and Mentor</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="education" class="tab-content p-6 bg-white shadow-md rounded-lg">
+                <h2 class="text-2xl font-semibold text-sky-700 mb-6 border-b-2 border-sky-200 pb-2">Education</h2>
+                 <p class="mb-6 text-slate-600 leading-relaxed">
+                    This section outlines my academic background and foundational qualifications that have equipped me with the necessary knowledge and skills for my engineering career.
+                </p>
+                <div class="space-y-6">
+                    <div class="p-4 border border-slate-200 rounded-lg">
+                        <h3 class="text-lg font-semibold text-sky-600">Higher Diploma, FPT Jetking Program</h3>
+                        <p class="text-md text-slate-500">FPT University, Ho Chi Minh City</p>
+                        <p class="text-sm text-slate-400">Jun 2018 – Mar 2020</p>
+                    </div>
+                    <div class="p-4 border border-slate-200 rounded-lg">
+                        <h3 class="text-lg font-semibold text-sky-600">The Degree of Engineer</h3>
+                        <p class="text-md text-slate-500">National University of Civil Engineering, Hanoi</p>
+                        <p class="text-sm text-slate-400">Aug 2012 – May 2017</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-12 py-6 border-t border-slate-300">
+            <p class="text-sm text-slate-500">&copy; <span id="currentYear"></span> Tran Thanh Dung (William). All rights reserved.</p>
+            <p class="text-xs text-slate-400 mt-1">This interactive resume was created to showcase my profile.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.tab-content');
+            const activeTabClasses = ['active-tab', 'bg-sky-600', 'text-white'];
+            const inactiveTabClasses = ['inactive-tab', 'bg-slate-200', 'text-sky-700', 'hover:bg-slate-300'];
+
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const target = this.dataset.tab;
+
+                    tabs.forEach(t => {
+                        t.classList.remove(...activeTabClasses);
+                        t.classList.add(...inactiveTabClasses);
+                    });
+                    
+                    this.classList.add(...activeTabClasses);
+                    this.classList.remove(...inactiveTabClasses);
+
+                    contents.forEach(content => {
+                        if (content.id === target) {
+                            content.classList.add('active');
+                        } else {
+                            content.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            const skillsData = {
+                labels: [
+                    'Programming & Scripting', 
+                    'Containerization & Orchestration', 
+                    'CI/CD Tools', 
+                    'Configuration Management', 
+                    'Cloud Platforms',
+                    'Operating Systems',
+                    'Databases',
+                    'Version Control'
+                ],
+                datasets: [{
+                    label: 'Number of Listed Skills/Tools',
+                    data: [4, 3, 2, 2, 3, 4, 3, 5], 
+                    backgroundColor: [
+                        'rgba(56, 189, 248, 0.6)', // sky-400
+                        'rgba(14, 165, 233, 0.6)', // sky-500
+                        'rgba(2, 132, 199, 0.6)',  // sky-600
+                        'rgba(3, 105, 161, 0.6)',  // sky-700
+                        'rgba(12, 74, 110, 0.6)',  // sky-800
+                        'rgba(56, 189, 248, 0.5)', 
+                        'rgba(14, 165, 233, 0.5)', 
+                        'rgba(2, 132, 199, 0.5)'  
+                    ],
+                    borderColor: [
+                        'rgba(56, 189, 248, 1)',
+                        'rgba(14, 165, 233, 1)',
+                        'rgba(2, 132, 199, 1)',
+                        'rgba(3, 105, 161, 1)',
+                        'rgba(12, 74, 110, 1)',
+                        'rgba(56, 189, 248, 1)',
+                        'rgba(14, 165, 233, 1)',
+                        'rgba(2, 132, 199, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            };
+
+            const skillsChartCtx = document.getElementById('skillsChart')?.getContext('2d');
+            if (skillsChartCtx) {
+                new Chart(skillsChartCtx, {
+                    type: 'bar', // Changed to 'bar' for better readability with multiple categories
+                    data: skillsData,
+                    options: {
+                        indexAxis: 'y', // Makes it a horizontal bar chart
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                ticks: {
+                                    stepSize: 1,
+                                    color: '#475569' // slate-600
+                                },
+                                grid: {
+                                    color: '#e2e8f0' // slate-200
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    color: '#475569', // slate-600
+                                    font: {
+                                        size: 10 // Adjust font size for y-axis labels if needed
+                                    },
+                                    // Callback to wrap long labels
+                                    callback: function(value) {
+                                        const label = this.getLabelForValue(value);
+                                        const maxLength = 20; // Max characters before attempting to wrap
+                                        if (label.length > maxLength) {
+                                            // A simple split strategy, might need more sophisticated wrapping
+                                            const words = label.split(' ');
+                                            const lines = [];
+                                            let currentLine = '';
+                                            words.forEach(word => {
+                                                if ((currentLine + word).length > maxLength && currentLine.length > 0) {
+                                                    lines.push(currentLine.trim());
+                                                    currentLine = word + ' ';
+                                                } else {
+                                                    currentLine += word + ' ';
+                                                }
+                                            });
+                                            lines.push(currentLine.trim());
+                                            return lines;
+                                        }
+                                        return label;
+                                    }
+                                },
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false // Hiding legend as it's self-explanatory with one dataset
+                            },
+                            tooltip: {
+                                backgroundColor: '#0f172a', // slate-900
+                                titleColor: '#f8fafc',    // slate-50
+                                bodyColor: '#e2e8f0',     // slate-200
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed.x !== null) {
+                                            label += context.parsed.x;
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            } else {
+                console.error("Failed to get context for skillsChart canvas element.");
+            }
+        });
+    </script>
+</body>
+</html>
